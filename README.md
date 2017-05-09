@@ -3,11 +3,11 @@
 ## how to build
 
 ```sh
-docker build --rm -t centos-build .
+docker build --rm -t centos-base .
 ```
 
 ## running
 
 ```sh
-docker run -it --rm asalles/centos-build /bin/bash
+docker run -it --rm asalles/centos-base /bin/bash
 ```
