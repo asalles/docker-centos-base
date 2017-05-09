@@ -2,35 +2,15 @@
 #
 # VERSION               0.0.1
 
-FROM     centos:latest
+FROM     centos:base
 
-MAINTAINER Drecom Technical Development Department "pr_itn@drecom.co.jp"
+MAINTAINER Antonio Salles "antonio@cautivatech.com"
 
 #RUN rpm -ivh http://ftp.iij.ad.jp/pub/linux/fedora/epel/6/x86_64/epel-release-6-8.noarch.rpm
 
-RUN yum install -y \
-    epel-release \
-    openssl-devel \
-    readline-devel\
-    zlib-devel \
-    wget \
-    curl \
-    git \
-    dtach \
-    vim \
-    hash-slinger \
-    bzip2 \
-    tar \
-    ImageMagick \
-    ImageMagick-devel \
-    libffi-devel \
-    mysql \
-    mysql-devel \
-    libxslt-devel \
-    redis \
-    python \
-&&  yum groupinstall "Development Tools" -y \
-&&  yum clean all
+RUN yum groupinstall base -y
+RUN yum groupinstall "Development Tools" -y
+RUN yum clean all
 
 # node.js LTS install
 RUN curl --silent --location https://rpm.nodesource.com/setup_6.x | bash - \
